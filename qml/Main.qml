@@ -1,46 +1,74 @@
 import QtQuick 2.0
 import Felgo 3.0
 import QtMultimedia 5.12
+
 App {
-
-
-    // You can try different navigation modes by uncommenting the lines below
-    // By default, the mode is chosen depending on the platform. Tabs on iOS, drawer on Android
-    //navigationMode: navigationModeDrawer
-    //navigationMode: navigationModeTabs
-
-
-      NavigationStack {
+  NavigationStack {
 
         Page {
           id: page
-          title: "لعبة الحروف"
+          title: "تعلم الحروف العربية "
           Image {
               anchors.fill: parent
               id: a
-              source: "../background game.png"
+              source: "../assets/bg4.jpg"
           }
           AppButton {
-            anchors.centerIn: parent
-            text: "أبدأ اللعبة"
+              text: "أبدأ التعلم "
+              x:700
+              y:350
+
+            flat: false
+            fontBold: true
+            textSize: 40
+            borderColor: "light blue"
+            borderWidth: 5
+            backgroundColorPressed: "red"
             onClicked: {
               page.navigationStack.push(subPage)
             }
 
           }
+          AppButton {
+              x:400
+              y:350
+            text: "أبدأ تمارين "
+
+            flat: false
+            fontBold: true
+            textSize: 40
+            borderColor: "light blue"
+            borderWidth: 5
+            backgroundColorPressed: "red"
+            onClicked: { page.navigationStack.push(ex)
+            }
+
+          }
+
+
         }
       }
+  Component {
+    id: ex
+    Page {
+        title: "التمارين"
+        id:sup
 
+        Image {
+            anchors.fill: parent
+            id: a
+            source: "../assets/bg333.jpg"
+        }}}
   Component {
     id: subPage
     Page {
         title: "الحروف"
         id:pagge
-     // title: "Sub Page"
+
         Image {
             anchors.fill: parent
             id: a
-            source: "../background game.png"
+            source: "../assets/bg4.jpg"
         }
     AppButton{
         text: "أ"
@@ -52,21 +80,15 @@ App {
         backgroundColorPressed: "red"
         x:0
         y:5
-        //anchors.fill: parent
+       onClicked: sout.play()
     }
-    AppButton{
-            text: "استماع"
-            flat: false
-            x:0
-            y:80
-            onClicked: sout.play()
-            }AppButton{
+   AppButton{
             text:"مثال"
             flat:false
             onClicked :{pagge.navigationStack.push(third,arnob.play())//هنا مش صوت البطة
             }
             x:0
-            y:150
+            y:80
         }
 
     AppButton{
@@ -79,21 +101,14 @@ App {
         textSize: 40
         x:200
         y:5
-
+        onClicked: bata.play()
        }
-    AppButton{
-            text: "استماع"
-            flat: false
-            x:200
-            y:80
-            onClicked: bata.play()
-            }AppButton{
+   AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(fou,bata1.play())//هنا مش صوت البطة
-            }
+            onClicked :{pagge.navigationStack.push(fou,bata1.play())          }
             x:200
-            y:150
+            y:80
         }
 
 
@@ -107,22 +122,16 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
+        onClicked: tofa7a.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:400
-            y:80
-            onClicked: tofa7a.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(fi,tofa7a1.play())
         }
         x:400
-        y:150
+        y:80
     }
     AppButton{
         text:"ث"
@@ -134,23 +143,16 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
+        onClicked: sna.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:600
-            y:80
-            onClicked: sna.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(si,snake.play())
         }
         x:600
-        y:150
+        y:80
     }
     AppButton{
         text:"ج"
@@ -162,23 +164,16 @@ App {
         y:5
         fontBold: true
         textSize: 40
+         onClicked: ca.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:800
-            y:80
-            onClicked: ca.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(se,camel.play())
         }
         x:800
-        y:150
+        y:80
     }
     AppButton{
         text:"ح"
@@ -190,26 +185,18 @@ App {
         borderWidth: 5
         fontBold: true
         textSize: 40
+        onClicked: ho.play()
     }
-    AppButton{
-
-            text: "استماع"
-            flat: false
-            x:1000
-            y:80
-            onClicked: ho.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(ei,horse.play())
         }
         x:1000
-        y:150
+        y:80
     }
     AppButton{
         text:"خ"
-       // backgroundColor: "brown"
         borderColor: "light blue"
         borderWidth: 5
         backgroundColorPressed: "red"
@@ -218,22 +205,16 @@ App {
         y:5
         fontBold: true
         textSize: 40
+        onClicked: she.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:1200
-            y:80
-            onClicked: she.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(ni,sheep.play())
         }
         x:1200
-        y:150
+        y:80
     }
     AppButton{
         text:"د"
@@ -247,23 +228,16 @@ App {
         y:5
         fontBold: true
         textSize: 40
+         onClicked: da.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:1400
-            y:80
-            onClicked: da.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(te,dob.play())
         }
         x:1400
-        y:150
+        y:80
     }
     AppButton{
         text: "ذ"
@@ -274,22 +248,16 @@ App {
         borderWidth: 5
         backgroundColorPressed: "red"
         x:0
-        y:250
-        //anchors.fill: parent
+        y:170
+           onClicked: zn.play()
     }
-    AppButton{
-            text: "استماع"
-            flat: false
-            x:0
-            y:325
-            onClicked: zn.play()
-            }AppButton{
+   AppButton{
             text:"مثال"
             flat:false
             onClicked :{pagge.navigationStack.push(el,wolf.play())//هنا مش صوت البطة
             }
             x:0
-            y:395
+            y:245
         }
     AppButton{
         text: "ر"
@@ -300,76 +268,58 @@ App {
         backgroundColorPressed: "red"
         textSize: 40
         x:200
-        y:250
+        y:170
+         onClicked: re.play()
        }
     AppButton{
-            text: "استماع"
-            flat: false
-            x:200
-            y:325
-            onClicked: re.play()
-            }AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(twe,roman.play())//هنا مش صوت البطة
         }
         x:200
-        y:395
+        y:245
     }
     AppButton{
         text:"ز"
         flat:false
         x:400
-        y:250
+        y:170
         borderColor: "light blue"
         borderWidth: 5
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
+         onClicked: za.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:400
-            y:325
-            onClicked: za.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(thi,girraf.play())
         }
         x:400
-        y:395
+        y:245
     }
     AppButton{
         text:"س"
         flat:false
         x:600
-        y:250
+        y:170
         borderColor: "light blue"
         borderWidth: 5
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
+        onClicked: sen.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:600
-            y:325
-            onClicked: sen.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(foo,fish.play())
         }
         x:600
-        y:395
+        y:245
     }
     AppButton{
         text:"ش"
@@ -378,81 +328,62 @@ App {
         backgroundColorPressed: "red"
         flat:false
         x:800
-        y:250
+        y:170
         fontBold: true
         textSize: 40
+        onClicked: shee.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:800
-            y:325
-            onClicked: shee.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(fif,sun.play())
         }
         x:800
-        y:395
+        y:245
     }
     AppButton{
         text:"ص"
         flat:false
         x:1000
-        y:250
+        y:170
         borderColor: "light blue"
         backgroundColorPressed: "red"
         borderWidth: 5
         fontBold: true
         textSize: 40
+         onClicked: sak.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:1000
-            y:325
-            onClicked: sak.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(six,eagle.play())
         }
         x:1000
-        y:395
+        y:245
     }
     AppButton{
         text:"ض"
-       // backgroundColor: "brown"
+
         borderColor: "light blue"
         borderWidth: 5
         backgroundColorPressed: "red"
         flat:false
         x:1200
-        y:250
+        y:170
         fontBold: true
         textSize: 40
+         onClicked: daa.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:1200
-            y:325
-            onClicked: daa.play()
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(seve,doo.play())
         }
         x:1200
-        y:395
+        y:245
     }
     AppButton{
         text:"ط"
@@ -463,26 +394,19 @@ App {
 
         flat:false
         x:1400
-        y:250
+        y:170
         fontBold: true
         textSize: 40
+         onClicked: ta.play()
     }
-    AppButton{
 
-            text: "استماع"
-            flat: false
-            x:1400
-            y:325
-            onClicked: ta.play()
-
-            }
     AppButton{
         text:"مثال"
         flat:false
         onClicked :{pagge.navigationStack.push(eig,plane.play())
         }
         x:1400
-        y:395
+        y:245
     }
     AppButton{
         text: "ظ"
@@ -493,22 +417,15 @@ App {
         borderWidth: 5
         backgroundColorPressed: "red"
         x:0
-        y:500
-        //anchors.fill: parent
-    }
-    AppButton{
-            text: "استماع"
-            flat: false
-            x:0
-            y:575
-            onClicked: zaa.play()
-            }AppButton{
+        y:335
+ onClicked: zaa.play()    }
+   AppButton{
             text:"مثال"
             flat:false
             onClicked :{pagge.navigationStack.push(nth,zrf.play())//هنا مش صوت البطة
             }
             x:0
-            y:645
+            y:410
         }
     AppButton{
             text: "ع"
@@ -519,76 +436,59 @@ App {
             backgroundColorPressed: "red"
             textSize: 40
             x:200
-            y:500
+            y:335
+            onClicked: ein.play()
            }
-        AppButton{
-                text: "استماع"
-                flat: false
-                x:200
-                y:575
-                onClicked: ein.play()
-                }AppButton{
+      AppButton{
             text:"مثال"
             flat:false
             onClicked :{pagge.navigationStack.push(twn,einn.play())//هنا مش صوت البطة
             }
             x:200
-            y:645
+            y:410
     }
     AppButton{
            text:"غ"
            flat:false
            x:400
-           y:500
+           y:335
            borderColor: "light blue"
            borderWidth: 5
            backgroundColorPressed: "red"
            fontBold: true
            textSize: 40
+             onClicked: gh.play()
        }
-       AppButton{
 
-               text: "استماع"
-               flat: false
-               x:400
-               y:575
-               onClicked: gh.play()
-               }
        AppButton{
            text:"مثال"
            flat:false
            onClicked :{pagge.navigationStack.push(tw1,gho.play())
            }
            x:400
-           y:645
+           y:410
       }
        AppButton{
                text:"ف"
                flat:false
                x:600
-               y:500
+               y:335
                borderColor: "light blue"
                borderWidth: 5
                backgroundColorPressed: "red"
                fontBold: true
                textSize: 40
+               onClicked: f.play()
+
            }
-           AppButton{
 
-                   text: "استماع"
-                   flat: false
-                   x:600
-                   y:575
-                   onClicked: f.play()
-
-                   }
            AppButton{
                text:"مثال"
                flat:false
                onClicked :{pagge.navigationStack.push(tw2,fil.play())
                }
                x:600
-               y:645
+               y:410
            }
            AppButton{
                    text:"ق"
@@ -597,251 +497,178 @@ App {
                    backgroundColorPressed: "red"
                    flat:false
                    x:800
-                   y:500
+                   y:335
                    fontBold: true
                    textSize: 40
+                   onClicked: qa.play()
+
                }
-               AppButton{
 
-                       text: "استماع"
-                       flat: false
-                       x:800
-                       y:575
-                       onClicked: qa.play()
-
-                       }
                AppButton{
                    text:"مثال"
                    flat:false
                    onClicked :{pagge.navigationStack.push(tw3,qlm.play())
                    }
                    x:800
-                   y:645
+                   y:410
                }
                AppButton{
                       text:"ك"
                       flat:false
                       x:1000
-                      y:500
+                      y:335
                       borderColor: "light blue"
                       backgroundColorPressed: "red"
                       borderWidth: 5
                       fontBold: true
                       textSize: 40
-                  }
-                  AppButton{
+                      onClicked: kaf.play()
 
-                          text: "استماع"
-                          flat: false
-                          x:1000
-                          y:575
-                          onClicked: kaf.play()
-                          }
+                  }
+
                   AppButton{
                       text:"مثال"
                       flat:false
                       onClicked :{pagge.navigationStack.push(tw4,ktab.play())
                       }
                       x:1000
-                      y:645
+                      y:410
                   } AppButton{
                       text:"ل"
-                     // backgroundColor: "brown"
+
                       borderColor: "light blue"
                       borderWidth: 5
                       backgroundColorPressed: "red"
                       flat:false
                       x:1200
-                      y:500
+                      y:335
                       fontBold: true
                       textSize: 40
-                  }
-                  AppButton{
+                      onClicked: lam.play()
 
-                          text: "استماع"
-                          flat: false
-                          x:1200
-                          y:575
-                          onClicked: lam.play()
-                          }
+                  }
+
                   AppButton{
                       text:"مثال"
                       flat:false
                       onClicked :{pagge.navigationStack.push(tw5,limon.play())
                       }
                       x:1200
-                      y:645
+                      y:410
                   }
                   AppButton{
                          text:"م"
-                         //backgroundColor: "red"
+
                          borderColor: "light blue"
                          borderWidth: 5
                          backgroundColorPressed: "red"
 
                          flat:false
                          x:1400
-                         y:500
+                         y:335
                          fontBold: true
                          textSize: 40
+                         onClicked: m.play()
+
                      }
-                     AppButton{
 
-                             text: "استماع"
-                             flat: false
-                             x:1400
-                             y:575
-                             onClicked: m.play()
-
-                             }
                      AppButton{
                          text:"مثال"
                          flat:false
                          onClicked :{pagge.navigationStack.push(tw6,mirror.play())
                          }
                          x:1400
-                         y:645
+                         y:410
                      }
                      AppButton{
-                         text: " أضغط لباقي الحروف"
+                         text: "ن"
                          flat: false
-                         backgroundColor: "light green"
                          fontBold: true
                          textSize: 40
-                         textColor: "black"
-                         borderColor: "green"
-                         borderWidth: 15
+                         borderColor: "light blue"
+                         borderWidth: 5
                          backgroundColorPressed: "red"
-                         x:700
-                         y:760
-                         onClicked: {pagge.navigationStack.push(ppage)
-
+                         x:0
+                         y:500
+                         onClicked: n.play()
+                     }
+                    AppButton{
+                             text:"مثال"
+                             flat:false
+                             onClicked :{pagge.navigationStack.push(tw7,nsr.play())//هنا مش صوت البطة
+                             }
+                             x:0
+                             y:575
                          }
 
-                         //anchors.fill: parent
-                     }}}
+                     AppButton{
+                         text: "ه"
+                         flat: false
+                         fontBold: true
+                         borderColor: "light blue"
+                         borderWidth: 5
+                         backgroundColorPressed: "red"
+                         textSize: 40
+                         x:200
+                         y:500
+                         onClicked: h.play()
 
-    Component{
-      id:ppage
-      Page{
-          id:ppp
-          title:"باقي الحروف"
-          Image {
-              id: pp
-              anchors.fill: parent
-              source: "../background game.png"
-          }
-      //تكملة الحرووف
-      AppButton{
-          text: "ن"
-          flat: false
-          fontBold: true
-          textSize: 40
-          borderColor: "light blue"
-          borderWidth: 5
-          backgroundColorPressed: "red"
-          x:0
-          y:5
-          //anchors.fill: parent
-      }
-      AppButton{
-              text: "استماع"
-              flat: false
-              x:0
-              y:80
-              onClicked: n.play()
-              }AppButton{
-              text:"مثال"
-              flat:false
-              onClicked :{ppp.navigationStack.push(tw7,nsr.play())//هنا مش صوت البطة
-              }
-              x:0
-              y:150
-          }
-
-      AppButton{
-          text: "ه"
-          flat: false
-          fontBold: true
-          borderColor: "light blue"
-          borderWidth: 5
-          backgroundColorPressed: "red"
-          textSize: 40
-          x:200
-          y:5
-
-         }
-      AppButton{
-              text: "استماع"
-              flat: false
-              x:200
-              y:80
-              onClicked: h.play()
-              }AppButton{
-              text:"مثال"
-              flat:false
-              onClicked :{ppp.navigationStack.push(tw8,hrm.play())//هنا مش صوت البطة
-              }
-              x:200
-              y:150
-          }
+                        }
+                  AppButton{
+                             text:"مثال"
+                             flat:false
+                             onClicked :{pagge.navigationStack.push(tw8,hrm.play())//هنا مش صوت البطة
+                             }
+                             x:200
+                             y:575
+                         }
 
 
-      AppButton{
-          text:"و"
-          flat:false
-          x:400
-          y:5
-          borderColor: "light blue"
-          borderWidth: 5
-          backgroundColorPressed: "red"
-          fontBold: true
-          textSize: 40
-      }
-      AppButton{
+                     AppButton{
+                         text:"و"
+                         flat:false
+                         x:400
+                         y:500
+                         borderColor: "light blue"
+                         borderWidth: 5
+                         backgroundColorPressed: "red"
+                         fontBold: true
+                         textSize: 40
+                         onClicked: w.play()
 
-              text: "استماع"
-              flat: false
-              x:400
-              y:80
-              onClicked: w.play()
-              }
-      AppButton{
-          text:"مثال"
-          flat:false
-          onClicked :{ppp.navigationStack.push(tw9,wrda.play())
-          }
-          x:400
-          y:150
-      }
-      AppButton{
-          text:"ي"
-          flat:false
-          x:600
-          y:5
-          borderColor: "light blue"
-          borderWidth: 5
-          backgroundColorPressed: "red"
-          fontBold: true
-          textSize: 40
-      }
-      AppButton{
+                     }
 
-              text: "استماع"
-              flat: false
-              x:600
-              y:80
-              onClicked:yo.play()
+                     AppButton{
+                         text:"مثال"
+                         flat:false
+                         onClicked :{pagge.navigationStack.push(tw9,wrda.play())
+                         }
+                         x:400
+                         y:575
+                     }
+                     AppButton{
+                         text:"ي"
+                         flat:false
+                         x:600
+                         y:500
+                         borderColor: "light blue"
+                         borderWidth: 5
+                         backgroundColorPressed: "red"
+                         fontBold: true
+                         textSize: 40
+                         onClicked:yo.play()
 
-              }
-      AppButton{
-          text:"مثال"
-          flat:false
-          onClicked :{ppp.navigationStack.push(tw10,yma.play())
-          }
-          x:600
-          y:150
-      }}}
+                     }
+
+                     AppButton{
+                         text:"مثال"
+                         flat:false
+                         onClicked :{pagge.navigationStack.push(tw10,yma.play())
+                         }
+                         x:600
+                         y:575
+                     }
+                 }}
 
 
 
@@ -854,17 +681,17 @@ App {
   Image {
       anchors.fill: parent
       id: o
-      source: "../arnb.png"
+      source: "../assets/arnb.png"
   }}
 }
-//NavigationStack{
+
   Component{
       id:fou
       Page {
           title: "بطة"
   Image {
       anchors.fill: parent
-      source: "../pngaaa.com-1240252.png"
+      source: "../assets/duc.png"
 
  } }}
   Component{
@@ -900,7 +727,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../camel.png"
+      source: "../assets/camel.png"
   }}
 }
   Component{
@@ -911,7 +738,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../horse.png"
+      source: "../assets/horse.png"
   }}
 }
   Component{
@@ -923,7 +750,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../sheep.png"
+      source: "../assets/sheep.png"
   }}
 }
   Component{
@@ -934,7 +761,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../دجاجة.png"
+      source: "../assets/دجاجة.png"
   }}
 }
   Component{
@@ -945,7 +772,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../ذئب.png"
+      source: "../assets/ذئب.png"
   }}
 }
   Component{
@@ -956,7 +783,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../رمان.png"
+      source: "../assets/رمان.png"
   }}
 }
   Component{
@@ -967,7 +794,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../زرافة.png"
+      source: "../assets/زرافة.png"
   }}
 }
   Component{
@@ -978,7 +805,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../سمكة.png"
+      source: "../assets/سمكة.png"
   }}
 }
   Component{
@@ -989,7 +816,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../شمس.png"
+      source: "../assets/شمس.png"
   }}
 }
   Component{
@@ -1000,7 +827,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../صقر.png"
+      source: "../assets/صقر.png"
   }}
 }
   Component{
@@ -1011,7 +838,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../ضوء.png"
+      source: "../assets/ضوء.png"
   }}
 }
   Component{
@@ -1022,7 +849,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../طائرة.png"
+      source: "../assets/طائرة.png"
   }}
 }
 
@@ -1034,7 +861,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../ظرف.png"
+      source: "../assets/ظرف.png"
   }}
 }
   Component{
@@ -1045,7 +872,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../عين.png"
+      source: "../assets/عين.png"
   }}
 }
   Component{
@@ -1056,7 +883,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../غراب.png"
+      source: "../assets/غراب.png"
   }}
 }
   Component{
@@ -1067,7 +894,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../فيل.png"
+      source: "../assets/فيل.png"
   }}
 }
   Component{
@@ -1078,7 +905,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../قلم.png"
+      source: "../assets/قلم.png"
   }}
 }
   Component{
@@ -1089,7 +916,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../كتاب.png"
+      source: "../assets/كتاب.png"
   }}
 }
   Component{
@@ -1100,7 +927,7 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../ليمون.png"
+      source: "../assets/ليمون.png"
   }}
 }
   Component{
@@ -1111,9 +938,9 @@ App {
   Image {
       anchors.fill: parent
       id: ooo
-      source: "../مرأة.png"
+      source: "../assets/مرأة.png"
   }}}
-      Component{
+  Component{
           id:tw7
           Page {
               id:oo
@@ -1121,10 +948,10 @@ App {
       Image {
           anchors.fill: parent
           id: ooo
-          source: "../نسر.png"
+          source: "../assets/نسر.png"
       }}
 }
-      Component{
+  Component{
           id:tw8
           Page {
               id:oo
@@ -1132,9 +959,9 @@ App {
       Image {
           anchors.fill: parent
           id: ooo
-          source: "../هرم.png"
+          source: "../assets/هرم.png"
       }}}
-      Component{
+  Component{
           id:tw9
           Page {
               id:oo
@@ -1142,9 +969,9 @@ App {
       Image {
           anchors.fill: parent
           id: ooo
-          source: "../وردة.png"
+          source: "../assets/وردة.png"
       }}}
-      Component{
+  Component{
           id:tw10
           Page {
               id:oo
@@ -1152,235 +979,232 @@ App {
       Image {
           anchors.fill: parent
           id: ooo
-          source: "../يمامة.png"
+          source: "../assets/يمامة.png"
       }}}
 
   SoundEffect{
   id:sout
-  source: "../Recording (12).wav"
+  source: "../assets/Recording (12).wav"
   }
   SoundEffect{
       id:arnob
-      source: "../ارنب.wav"
+      source: "../assets/ارنب.wav"
   }
 
   SoundEffect{
       id:bata
-      source: "../ب.wav"
+      source: "../assets/ب.wav"
   }
   SoundEffect{
       id :bata1
-      source: "../بطة.wav"
+      source: "../assets/بطة.wav"
   }
   SoundEffect{
       id:tofa7a
-      source: "../ت.wav"
+      source: "../assets/ت.wav"
   }
 
   SoundEffect{
       id:tofa7a1
-      source: "../تفاحة.wav"
+      source: "../assets/تفاحة.wav"
   }
   SoundEffect{
       id:sna
-      source: "../ث.wav"
+      source: "../assets/ث.wav"
   }
   SoundEffect{
       id:snake
-      source: "../ثعبان.wav"
+      source: "../assets/ثعبان.wav"
   }
   SoundEffect{
       id:ca
-      source: "../ج.wav"
+      source: "../assets/ج.wav"
   }
   SoundEffect{
       id:camel
-      source: "../جمل.wav"
+      source: "../assets/جمل.wav"
   }
   SoundEffect{
       id:ho
-      source: "../ح.wav"
+      source: "../assets/ح.wav"
   }
   SoundEffect{
       id:horse
-      source: "../حصان.wav"
+      source: "../assets/حصان.wav"
   }
   SoundEffect{
       id:she
-      source: "../خ.wav"
+      source: "../assets/خ.wav"
   }
   SoundEffect{
       id:sheep
-      source: "../خروف.wav"
+      source: "../assets/خروف.wav"
   }
   SoundEffect{
       id:da
-      source: "../د.wav"
+      source: "../assets/د.wav"
   }
   SoundEffect{
       id:dob
-      source: "../دجاجة.wav"
+      source: "../assets/دجاجة.wav"
   }
   SoundEffect{
       id:zn
-      source: "../ذال.wav"
+      source: "../assets/ذال.wav"
   }
   SoundEffect{
       id:wolf
-      source: "../ذئب.wav"
+      source: "../assets/ذئب.wav"
   }
   SoundEffect{
       id:re
-      source: "../ر.wav"
+      source: "../assets/ر.wav"
   }
   SoundEffect{
       id:roman
-      source:"../رمان.wav"
+      source:"../assets/رمان.wav"
   }
   SoundEffect{
       id:za
-      source: "../ز.wav"
+      source: "../assets/ز.wav"
   }
   SoundEffect{
       id:girraf
-      source: "../زرافة.wav"
+      source: "../assets/زرافة.wav"
   }
   SoundEffect{
       id:sen
-      source: "../س.wav"
+      source: "../assets/س.wav"
   }
   SoundEffect{
       id:fish
-      source: "../سمكة.wav"
+      source: "../assets/سمكة.wav"
   }
   SoundEffect{
       id:shee
-      source: "../ش.wav"
+      source: "../assets/ش.wav"
   }
   SoundEffect{
       id:sun
-      source: "../شمس.wav"
+      source: "../assets/شمس.wav"
   }
   SoundEffect{
       id:sak
-      source: "../ص.wav"
+      source: "../assets/ص.wav"
   }
   SoundEffect{
       id:eagle
-      source: "../صقر.wav"
+      source: "../assets/صقر.wav"
   }
   SoundEffect{
       id:daa
-      source: "../ض.wav"
+      source: "../assets/ض.wav"
   }
   SoundEffect{
       id:doo
-      source: "../ضوء.wav"
+      source: "../assets/ضوء.wav"
   }
   SoundEffect{
       id:ta
-      source: "../ط.wav"
+      source: "../assets/ط.wav"
   }
   SoundEffect{
       id:plane
-      source: "../طائرة.wav"
+      source: "../assets/طائرة.wav"
   }
   SoundEffect{
       id:zaa
-      source: "../ظ.wav"
+      source: "../assets/ظ.wav"
   }
   SoundEffect{
       id:zrf
-      source: "../ظرف.wav"
+      source: "../assets/ظرف.wav"
   }
   SoundEffect{
       id:ein
-      source: "../ع.wav"
+      source: "../assets/ع.wav"
   }
   SoundEffect{
       id:einn
-      source: "../ع.wav"
+      source: "../assets/ع.wav"
   }
   SoundEffect{
       id:gh
-      source: "../غ.wav"
+      source: "../assets/غ.wav"
   }
   SoundEffect{
       id:gho
-      source: "../غراب.wav"
+      source: "../assets/غراب.wav"
   }
   SoundEffect{
       id:f
-      source: "../ف.wav"
+      source: "../assets/ف.wav"
   }
   SoundEffect{
       id:fil
-      source: "../فيل.wav"
+      source: "../assets/فيل.wav"
   }
   SoundEffect{
       id:qa
-      source: "../ق.wav"
+      source: "../assets/ق.wav"
   }
   SoundEffect{
       id:qlm
-      source: "../قلم.wav"
-  }
+      source: "../assets/قلم.wav"}
 
   SoundEffect{
       id:kaf
-      source: "../ك.wav"
+      source: "../assets/ك.wav"
   }
   SoundEffect{
       id:ktab
-      source: "../كتاب.wav"
+      source: "../assets/كتاب.wav"
   }
   SoundEffect{
       id:lam
-      source: "../ل.wav"
+      source: "../assets/ل.wav"
   }
   SoundEffect{
       id:limon
-      source: "../ليمون.wav"
+      source: "../assets/ليمون.wav"
   }
   SoundEffect{
       id:m
-      source: "../ميم.wav"
+      source: "../assets/ميم.wav"
   }
   SoundEffect{
       id:mirror
-      source: "../مرأة.wav"
+      source: "../assets/مرأة.wav"
   }
   SoundEffect{
       id:n
-      source: "../ن.wav"
+      source: "../assets/ن.wav"
   }
   SoundEffect{
       id:nsr
-      source: "../نسر.wav"
+      source: "../assets/نسر.wav"
   }
   SoundEffect{
       id:h
-      source: "../ه.wav"
+      source: "../assets/ه.wav"
   }
   SoundEffect{
       id:hrm
-      source: "../هرم.wav"
+      source: "../assets/هرم.wav"
   }
   SoundEffect{
       id:w
-      source: "../و.wav"
+      source: "../assets/و.wav"
   }
   SoundEffect{
       id:wrda
-      source: "../وردة.wav"
+      source: "../assets/وردة.wav"
   }
   SoundEffect{
       id:yo
-      source: "../ي.wav"
+      source: "../assets/ي.wav"
   }
   SoundEffect{
       id:yma
-      source: "../يمامة.wav"
-  }
-
+      source: "../assets/يمامة.wav"}
 }
