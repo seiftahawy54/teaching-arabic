@@ -4,6 +4,13 @@ import QtMultimedia 5.1
 
 App {
 
+  // Application functionalities
+    Timer {
+        interval: 1000
+        id: pauseMusicTimer
+        onTriggered: bgMusic.play()
+    }
+
   FontLoader {
      id: cairoFont
      source: "../assets/fonts/Cairo-Regular.ttf"
@@ -579,6 +586,7 @@ App {
 }
 
 
+
   Component {
     id: subPage
     Page {
@@ -603,13 +611,16 @@ App {
         y:5
        onClicked: {
            bgMusic.pause()
+           pauseMusicTimer.start()
            sout.play()
        }
     }
+
+
    AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(third,arnob.play())//هنا مش صوت البطة
+            onClicked :{pagge.navigationStack.push(third,arnob.play())
             }
             x:0
             y:80
@@ -626,7 +637,11 @@ App {
         textSize: 40
         x:200
         y:5
-        onClicked: bata.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            bata.play()
+        }
        }
    AppButton{
             text:"مثال"
@@ -648,7 +663,11 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
-        onClicked: tofa7a.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            tofa7a.play()
+        }
     }
 
     AppButton{
@@ -670,7 +689,11 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
-        onClicked: sna.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            sna.play()
+        }
     }
 
     AppButton{
@@ -692,7 +715,10 @@ App {
         y:5
         fontBold: true
         textSize: 40
-         onClicked: ca.play()
+         onClicked: {
+             bgMusic.pause()
+             pauseMusicTimer.start()
+             ca.play()}
     }
 
     AppButton{
@@ -714,7 +740,10 @@ App {
         borderWidth: 5
         fontBold: true
         textSize: 40
-        onClicked: ho.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            ho.play()}
     }
     AppButton{
         text:"مثال"
@@ -735,7 +764,11 @@ App {
         y:5
         fontBold: true
         textSize: 40
-        onClicked: she.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            she.play()
+        }
     }
 
     AppButton{
@@ -759,7 +792,11 @@ App {
         y:5
         fontBold: true
         textSize: 40
-         onClicked: da.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            da.play()
+        }
     }
 
     AppButton{
@@ -781,7 +818,11 @@ App {
         backgroundColorPressed: "red"
         x:0
         y:170
-           onClicked: zn.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            zn.play()
+        }
     }
    AppButton{
             text:"مثال"
@@ -802,7 +843,11 @@ App {
         textSize: 40
         x:200
         y:170
-         onClicked: re.play()
+        onClicked: {
+             bgMusic.pause()
+             pauseMusicTimer.start()
+             re.play()
+         }
        }
     AppButton{
         text:"مثال"
@@ -823,7 +868,11 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
-         onClicked: za.play()
+         onClicked: {
+             bgMusic.pause()
+             pauseMusicTimer.start()
+             za.play()
+         }
     }
 
     AppButton{
@@ -845,7 +894,11 @@ App {
         backgroundColorPressed: "red"
         fontBold: true
         textSize: 40
-        onClicked: sen.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            sen.play()
+        }
     }
 
     AppButton{
@@ -867,7 +920,11 @@ App {
         y:170
         fontBold: true
         textSize: 40
-        onClicked: shee.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            shee.play()
+        }
     }
 
     AppButton{
@@ -889,7 +946,11 @@ App {
         borderWidth: 5
         fontBold: true
         textSize: 40
-         onClicked: sak.play()
+        onClicked: {
+             bgMusic.pause()
+             pauseMusicTimer.start()
+             sak.play()
+         }
     }
 
     AppButton{
@@ -912,7 +973,11 @@ App {
         y:170
         fontBold: true
         textSize: 40
-         onClicked: daa.play()
+        onClicked: {
+             bgMusic.pause()
+             pauseMusicTimer.start()
+             daa.play()
+         }
     }
 
     AppButton{
@@ -936,7 +1001,11 @@ App {
         y:170
         fontBold: true
         textSize: 40
-         onClicked: ta.play()
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            ta.play()
+        }
     }
 
     AppButton{
@@ -958,7 +1027,12 @@ App {
         backgroundColorPressed: "red"
         x:0
         y:335
- onClicked: zaa.play()    }
+        onClicked: {
+            bgMusic.pause()
+            pauseMusicTimer.start()
+            zaa.play()
+        }
+    }
    AppButton{
             text:"مثال"
             flat:false
@@ -978,7 +1052,11 @@ App {
             textSize: 40
             x:200
             y:335
-            onClicked: ein.play()
+            onClicked: {
+                bgMusic.pause()
+                pauseMusicTimer.start()
+                ein.play()
+            }
            }
       AppButton{
             text:"مثال"
@@ -999,7 +1077,11 @@ App {
            backgroundColorPressed: "red"
            fontBold: true
            textSize: 40
-             onClicked: gh.play()
+            onClicked: {
+                 bgMusic.pause()
+                 pauseMusicTimer.start()
+                 gh.play()
+             }
        }
 
        AppButton{
@@ -1021,7 +1103,11 @@ App {
                backgroundColorPressed: "red"
                fontBold: true
                textSize: 40
-               onClicked: f.play()
+               onClicked: {
+                   bgMusic.pause()
+                   pauseMusicTimer.start()
+                   f.play()
+               }
 
            }
 
@@ -1044,7 +1130,11 @@ App {
                    y:335
                    fontBold: true
                    textSize: 40
-                   onClicked: qa.play()
+                   onClicked: {
+                       bgMusic.pause()
+                       pauseMusicTimer.start()
+                       qa.play()
+                   }
 
                }
 
@@ -1067,7 +1157,11 @@ App {
                       borderWidth: 5
                       fontBold: true
                       textSize: 40
-                      onClicked: kaf.play()
+                      onClicked: {
+                          bgMusic.pause()
+                          pauseMusicTimer.start()
+                          kaf.play()
+                      }
 
                   }
 
@@ -1090,7 +1184,11 @@ App {
                       y:335
                       fontBold: true
                       textSize: 40
-                      onClicked: lam.play()
+                      onClicked: {
+                          bgMusic.pause()
+                          pauseMusicTimer.start()
+                          lam.play()
+                      }
 
                   }
 
@@ -1115,7 +1213,11 @@ App {
                          y:335
                          fontBold: true
                          textSize: 40
-                         onClicked: m.play()
+                         onClicked: {
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                             m.play()
+                         }
 
                      }
 
@@ -1138,7 +1240,11 @@ App {
                          backgroundColorPressed: "red"
                          x:0
                          y:500
-                         onClicked: n.play()
+                         onClicked: {
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                             n.play()
+                         }
                      }
                     AppButton{
                              text:"مثال"
@@ -1160,7 +1266,11 @@ App {
                          textSize: 40
                          x:200
                          y:500
-                         onClicked: h.play()
+                         onClicked: {
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                             h.play()
+                         }
 
                         }
                   AppButton{
@@ -1184,7 +1294,11 @@ App {
                          backgroundColorPressed: "red"
                          fontBold: true
                          textSize: 40
-                         onClicked: w.play()
+                         onClicked: {
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                             w.play()
+                         }
 
                      }
 
@@ -1207,7 +1321,11 @@ App {
                          backgroundColorPressed: "red"
                          fontBold: true
                          textSize: 40
-                         onClicked:yo.play()
+                         onClicked: {
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                             yo.play()
+                         }
 
                      }
 
@@ -1219,7 +1337,8 @@ App {
                          x:600
                          y:575
                      }
-                 }}
+                 }
+  }
 
 
 
@@ -1229,11 +1348,12 @@ App {
           id:aaa
           title: "أرنب"
 
-  Image {
-      anchors.fill: parent
-      id: o
-      source: "../assets/arnb.png"
-  }}
+          Image {
+              anchors.fill: parent
+              id: o
+              source: "../assets/arnb.png"
+            }
+   }
 }
 
   Component{
