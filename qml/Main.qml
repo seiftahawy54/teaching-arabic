@@ -10,6 +10,26 @@ App {
         id: pauseMusicTimer
         onTriggered: bgMusic.play()
     }
+    Timer {
+        interval: 2000
+        id: duckTimer
+        onTriggered: bgMusic.play()
+    }
+
+    BackgroundMusic {
+        id: successMusic
+        source: "../assets/audios/sucess.wav"
+        autoPlay: false
+    }
+
+    Timer {
+        interval: 5000
+        id: successTimer
+        onTriggered: {
+            successMusic.pause()
+            bgMusic.play()
+        }
+    }
 
   FontLoader {
      id: cairoFont
@@ -579,8 +599,10 @@ App {
                 id: e
                 source:"../assets/rr.jpg"
           }
-
-
+      onAppeared: {
+          successMusic.play()
+          successTimer.start()
+      }
   }
 
 }
@@ -620,7 +642,10 @@ App {
    AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(third,arnob.play())
+            onClicked :{
+                bgMusic.pause()
+                pauseMusicTimer.start()
+                pagge.navigationStack.push(third,arnob.play())
             }
             x:0
             y:80
@@ -646,7 +671,11 @@ App {
    AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(fou,bata1.play())          }
+            onClicked :{
+                bgMusic.pause()
+                duckTimer.start()
+                pagge.navigationStack.push(fou,bata1.play())
+            }
             x:200
             y:80
         }
@@ -673,7 +702,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(fi,tofa7a1.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(fi,tofa7a1.play())
         }
         x:400
         y:80
@@ -699,7 +731,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(si,snake.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(si,snake.play())
         }
         x:600
         y:80
@@ -724,7 +759,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(se,camel.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(se,camel.play())
         }
         x:800
         y:80
@@ -748,7 +786,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(ei,horse.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(ei,horse.play())
         }
         x:1000
         y:80
@@ -774,7 +815,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(ni,sheep.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(ni,sheep.play())
         }
         x:1200
         y:80
@@ -802,7 +846,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(te,dob.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(te,dob.play())
         }
         x:1400
         y:80
@@ -827,7 +874,10 @@ App {
    AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(el,wolf.play())//هنا مش صوت البطة
+            onClicked :{
+                bgMusic.pause()
+                pauseMusicTimer.start()
+               pagge.navigationStack.push(el,wolf.play())//هنا مش صوت البطة
             }
             x:0
             y:245
@@ -852,7 +902,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(twe,roman.play())//هنا مش صوت البطة
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(twe,roman.play())//هنا مش صوت البطة
         }
         x:200
         y:245
@@ -878,7 +931,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(thi,girraf.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(thi,girraf.play())
         }
         x:400
         y:245
@@ -904,7 +960,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(foo,fish.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(foo,fish.play())
         }
         x:600
         y:245
@@ -930,7 +989,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(fif,sun.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(fif,sun.play())
         }
         x:800
         y:245
@@ -956,7 +1018,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(six,eagle.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(six,eagle.play())
         }
         x:1000
         y:245
@@ -983,7 +1048,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(seve,doo.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(seve,doo.play())
         }
         x:1200
         y:245
@@ -1011,7 +1079,10 @@ App {
     AppButton{
         text:"مثال"
         flat:false
-        onClicked :{pagge.navigationStack.push(eig,plane.play())
+        onClicked :{
+            bgMusic.pause()
+            pauseMusicTimer.start()
+           pagge.navigationStack.push(eig,plane.play())
         }
         x:1400
         y:245
@@ -1036,7 +1107,10 @@ App {
    AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(nth,zrf.play())//هنا مش صوت البطة
+            onClicked :{
+                bgMusic.pause()
+                pauseMusicTimer.start()
+               pagge.navigationStack.push(nth,zrf.play())//هنا مش صوت البطة
             }
             x:0
             y:410
@@ -1061,7 +1135,10 @@ App {
       AppButton{
             text:"مثال"
             flat:false
-            onClicked :{pagge.navigationStack.push(twn,einn.play())//هنا مش صوت البطة
+            onClicked :{
+                bgMusic.pause()
+                pauseMusicTimer.start()
+               pagge.navigationStack.push(twn,einn.play())//هنا مش صوت البطة
             }
             x:200
             y:410
@@ -1087,7 +1164,10 @@ App {
        AppButton{
            text:"مثال"
            flat:false
-           onClicked :{pagge.navigationStack.push(tw1,gho.play())
+           onClicked :{
+               bgMusic.pause()
+               pauseMusicTimer.start()
+              pagge.navigationStack.push(tw1,gho.play())
            }
            x:400
            y:410
@@ -1114,7 +1194,10 @@ App {
            AppButton{
                text:"مثال"
                flat:false
-               onClicked :{pagge.navigationStack.push(tw2,fil.play())
+               onClicked :{
+                   bgMusic.pause()
+                   pauseMusicTimer.start()
+                  pagge.navigationStack.push(tw2,fil.play())
                }
                x:600
                y:410
@@ -1141,7 +1224,10 @@ App {
                AppButton{
                    text:"مثال"
                    flat:false
-                   onClicked :{pagge.navigationStack.push(tw3,qlm.play())
+                   onClicked :{
+                       bgMusic.pause()
+                       pauseMusicTimer.start()
+                      pagge.navigationStack.push(tw3,qlm.play())
                    }
                    x:800
                    y:410
@@ -1168,7 +1254,10 @@ App {
                   AppButton{
                       text:"مثال"
                       flat:false
-                      onClicked :{pagge.navigationStack.push(tw4,ktab.play())
+                      onClicked :{
+                          bgMusic.pause()
+                          pauseMusicTimer.start()
+                         pagge.navigationStack.push(tw4,ktab.play())
                       }
                       x:1000
                       y:410
@@ -1195,7 +1284,10 @@ App {
                   AppButton{
                       text:"مثال"
                       flat:false
-                      onClicked :{pagge.navigationStack.push(tw5,limon.play())
+                      onClicked :{
+                          bgMusic.pause()
+                          pauseMusicTimer.start()
+                         pagge.navigationStack.push(tw5,limon.play())
                       }
                       x:1200
                       y:410
@@ -1224,7 +1316,10 @@ App {
                      AppButton{
                          text:"مثال"
                          flat:false
-                         onClicked :{pagge.navigationStack.push(tw6,mirror.play())
+                         onClicked :{
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                            pagge.navigationStack.push(tw6,mirror.play())
                          }
                          x:1400
                          y:410
@@ -1249,7 +1344,10 @@ App {
                     AppButton{
                              text:"مثال"
                              flat:false
-                             onClicked :{pagge.navigationStack.push(tw7,nsr.play())//هنا مش صوت البطة
+                             onClicked :{
+                                 bgMusic.pause()
+                                 pauseMusicTimer.start()
+                                pagge.navigationStack.push(tw7,nsr.play())//هنا مش صوت البطة
                              }
                              x:0
                              y:575
@@ -1276,7 +1374,10 @@ App {
                   AppButton{
                              text:"مثال"
                              flat:false
-                             onClicked :{pagge.navigationStack.push(tw8,hrm.play())//هنا مش صوت البطة
+                             onClicked :{
+                                 bgMusic.pause()
+                                 pauseMusicTimer.start()
+                                pagge.navigationStack.push(tw8,hrm.play())//هنا مش صوت البطة
                              }
                              x:200
                              y:575
@@ -1305,7 +1406,10 @@ App {
                      AppButton{
                          text:"مثال"
                          flat:false
-                         onClicked :{pagge.navigationStack.push(tw9,wrda.play())
+                         onClicked :{
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                            pagge.navigationStack.push(tw9,wrda.play())
                          }
                          x:400
                          y:575
@@ -1332,7 +1436,10 @@ App {
                      AppButton{
                          text:"مثال"
                          flat:false
-                         onClicked :{pagge.navigationStack.push(tw10,yma.play())
+                         onClicked :{
+                             bgMusic.pause()
+                             pauseMusicTimer.start()
+                            pagge.navigationStack.push(tw10,yma.play())
                          }
                          x:600
                          y:575
